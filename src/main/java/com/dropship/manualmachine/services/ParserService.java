@@ -3,6 +3,7 @@ package com.dropship.manualmachine.services;
 import com.dropship.manualmachine.Parser;
 import com.dropship.manualmachine.ParserObject;
 import com.dropship.manualmachine.parsers.EbaySoldParser;
+import com.dropship.manualmachine.parsers.ShippingParser;
 import com.dropship.manualmachine.parsers.WMOrderParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
