@@ -2,14 +2,27 @@ package com.dropship.manualmachine.models;
 import com.dropship.manualmachine.ParserObject;
 import com.opencsv.bean.CsvToBean;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
 
+@Entity
+@Table(name = "shippingdata")
 public class ShippingModel implements ParserObject {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long shippingdata_id;
+
+    @Column(name = "date_ordered", nullable = false)
     private String orderedDate;
+    @Column(name = "order_id", nullable = false)
     private String orderId;
+    @Column(name = "tracking_number", nullable = false)
     private String trackingNumber;
+    @Column(name = "courier", nullable = false)
     private String courier;
-    private String orderTotal;
+    @Column(name = "order_total", nullable = false)
+    private BigDecimal orderTotal;
 
     public String getOrderedDate() {
         return orderedDate;
@@ -43,12 +56,20 @@ public class ShippingModel implements ParserObject {
         this.courier = courier;
     }
 
-    public String getOrderTotal() {
+    public BigDecimal getOrderTotal() {
         return orderTotal;
     }
 
     public void setOrderTotal(String orderTotal) {
-        this.orderTotal = orderTotal;
+        this.orderTotal = new BigDecimal(orderTotal.substring(1));
+    }
+
+    public Long getShippingdata_id() {
+        return shippingdata_id;
+    }
+
+    public void setShippingdata_id(Long shippingdata_id) {
+        this.shippingdata_id = shippingdata_id;
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.dropship.manualmachine.ParserObject;
 import com.dropship.manualmachine.models.WMOrderModel;
 import com.dropship.manualmachine.utils.Utilities;
 import org.apache.poi.ss.usermodel.*;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static com.dropship.manualmachine.utils.Utilities.checkIfRowIsEmpty;
 
+@Service
 public class WMOrderParser implements Parser{
 
     @Override
